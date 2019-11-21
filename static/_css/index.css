@@ -1,0 +1,51 @@
+
+#planodefundo {
+	width: 100%;
+	height:115%;
+	margin-top: -10%;
+
+}
+
+
+#imagem2 {
+	width: 100%;
+	height:30%;
+	margin-top: -10%;
+
+}
+
+#botao {
+	text-align: center;
+}
+
+.card1 {
+	background-color: yellow;
+	width: 150px;
+	margin-left: 12%;
+
+}
+
+.card2 {
+	background-color: yellow;
+	width: 150px;
+	margin-left: 12%;
+	
+}
+
+.card3 {
+	background-color: yellow;
+	margin-top: -20%;
+	width: 150px;
+	margin-left: 65%;
+}
+
+.card4 {
+	background-color: yellow;
+	margin-top: 8%;
+	width: 150px;
+	margin-left: 65%;
+
+}
+
+
+
