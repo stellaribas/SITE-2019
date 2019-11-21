@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title> Cidade Reclama </title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='_css/index.css') }}"> <!-- CSS -->
+         <!-- Compiled and minified CSS -->
+		{% block css %}
+        {% endblock css %}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">		
+    </head>	
+    <body>
+        {% include "_Nav.html" %}
+
+
+        {% block body %}
+        {% endblock body %}
+      
+        {% block conteudo %}
+        {% endblock conteudo %}
+
+        {% include "_Rodape.html" %}
+   
+
+</body>
+</html>

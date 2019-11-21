@@ -1,0 +1,63 @@
+{%extends "base.html"%}
+
+{%block body%}
+	
+		<img id = "planodefundo" src = "{{ url_for('static', filename='_imagens/cidade.jpeg') }}" />
+		
+		 <h1 style = "font-family: Candara Light; color: white; margin-top: -35%; text-align: center;"> <b> CIDADE RECLAMA </b> </h1>
+		 <h5 style = "font-family: Candara Light; color: white; margin-top: -1%; text-align: center;"> <b> FAÇA AQUI A SUA DENÚNCIA E AJUDE </br> A MELHORAR A SUA CIDADE! </b> </h5>
+		
+		</br> 
+		<div id = "botao">
+		<a href = "/dununcias" class="waves-effect waves-light btn orange darken-2"> Denuncie já!</a>
+		</div>
+		
+		<h5 style = "font-size: 33px; font-family: Candara Light; color: black; margin-top: 27%; text-align: center;"> PASSOS PARA DENUNCIAR  </h5> 
+		</br>  </br>
+		
+		<div>
+			<div class="card1">
+				<i class="large material-icons">group</i> 
+			</div>
+		</div>
+		<p style = "margin-left: 24%; margin-top: -5%; font-family: Candara Light;"> <b> Primeiro o usuário deve realizar o </br> cadastro, se ele ainda não estiver </br> cadastrado.  <b> </p> </br> </br> </br> </br> 
+		
+		<div>
+			<div class="card2">
+				<i class="large material-icons">touch_app</i> 
+			</div>
+		</div> 
+		<p style = "margin-left: 24%; margin-top: -4%; font-family: Candara Light;"> <b> Depois ele escolhe a opção </br> "DENUNCIE JÁ!"  </b> </p>
+		
+		<div>
+			<div class="card3">
+				<i class="large material-icons">warning</i>
+			</div>
+		</div> 
+		<p style = "margin-left: 77%; margin-top: -3%; font-family: Candara Light;"> <b> Pronto. Pode realizar sua denúncia. </b> </p>
+		
+		<div>
+			<div class="card4">
+				<i class="large material-icons">location_on</i> 
+			</div>
+		</div>
+		<p style = "margin-left: 77%; margin-top: -3%; font-family: Candara Light;"> Pronto. Pode realizar sua denúncia. </p>
+	</br> </br>
+
+	<div style = "background-color: beige;"> </br>
+		<h1 style = "height: 75%; font-size: 30px; font-family: Candara Light;  text-align: center;"> SOBRE NÓS </br> </br>
+			<p style = "text-align: left; font-size: 20px;"> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> 
+				Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br>
+				Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> </p> 
+			<img style = "width: 15%; margin-top: -13%; margin-left: -12%; border-radius: 50%;" src = "{{ url_for('static', filename='_imagens/stella.jpg') }}" /> 
+		
+
+
+			<p style = "text-align: right; font-size: 20px; margin-left: 50%;"> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> 
+				Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br>
+				Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> </p> 
+			<img style = "width: 15%; margin-top: -13%; margin-left: 12%; border-radius: 50%;" src = "{{ url_for('static', filename='_imagens/eva.jpg') }}" /> 
+		</h1>
+	</div>
+
+{% endblock body %}
