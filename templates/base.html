@@ -1,9 +1,10 @@
 <html>
 	<head>
-		<title> Cidade Reclama </title>
+		<title> {% block titulo %}Cidade Reclama {% endblock titulo %} </title>
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='_css/index.css') }}"> <!-- CSS -->
          <!-- Compiled and minified CSS -->
-		{% block css %}
+        {% block css %}
+        
         {% endblock css %}
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 		<!-- Compiled and minified JavaScript -->
@@ -11,8 +12,21 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">		
     </head>	
     <body>
-        {% include "_Nav.html" %}
-
+      
+        {% block nav %}
+            <nav class="transparent">
+                    <div class="nav-wrapper">
+                        <a href="/" class="brand-logo">Logo</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/mapa">Mapa</a></li>
+                            <li><a href="/cadastro">Cadastro</a></li>
+                            <li><a href="/login">Login</a></li>
+                        </ul>
+                    </div>
+                </nav>
+        {% endblock nav %}
 
         {% block body %}
         {% endblock body %}
