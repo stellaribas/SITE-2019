@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+
+   
+<div class="row">
+  
+    <div id='mapa' class="col l9">
+            <div  id="mapDiv"></div>
+    </div>
+
+
+    <div class="col l3">
+            <div class="row">
+                    <div class="">
+                        <div class="card">
+                            <div class="card-action yellow darken-1 white-text">
+                                <h3> DENÚNCIAS </h3>
+                            </div>
+        
+                            <form action="" method="POST">
+                                    {{ form.csrf_token }}
+        
+                                <div class="card-content">
+                                    <label>Latitude</label>
+                                        {{ form.latitude (_class="form-control",
+                                        placeholder="Latitude" ) }}
+                                </div>
+        
+                                <div class= "card-content">
+                                    <label>Longitude</label>
+                                        {{ form.longitude(_class="form-control",
+                                        placeholder="Longitude")}}
+                                </div>
+        
+                                <div class="card-content">
+                                    <label> Mensagem </label>
+                                        {{ form.mensagem(_class="form-control",
+                                        placeholder="Mensagem")}}
+                                </div>
+        
+                            <button type="submit" class= "btn-floating btn-large waves-effect waves-light red">Enviar</button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+  
+    </div>
+  
+  </div>
+        
+
+       
+
+
+
+
+
+
+       
+
+       
+{% endblock conteudo %}
+
+{% block mapa %}
+
+{% endblock mapa %}
