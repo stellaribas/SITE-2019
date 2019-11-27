@@ -10,6 +10,23 @@
 		<!-- Compiled and minified JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">		
+  
+        <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
+        <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+
+        <style>
+            #mapDiv {
+	position: absolute;
+	z-index:1;
+	top:12%; 
+	bottom:0; 
+	right:26%; 
+	left:1%; 
+	overflow:hidden; 
+	background-color:grey;
+	}
+        </style>
+
     </head>	
     <body>
       
@@ -37,5 +54,9 @@
         {% include "_Rodape.html" %}
    
 
+
+        {% block javascript %}
+        
+        {% endblock javascript %}
 </body>
 </html>
