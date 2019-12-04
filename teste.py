@@ -74,8 +74,14 @@ def denuncias():
         db.session.add(d)
         db.session.commit()
 
-    return render_template("denuncias.html",
-                                form=form)
+    denuncias = Denuncia.query.all()
+    return render_template("denuncias.html", form=form, denuncias=denuncias)
+                                        
+
+def lat():
+    latitude = lat()
+    return latitude
+
 
 if __name__== "__main__":
     site.run(debug=True)
