@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 
+{% block titulo %}
+    CR - Faça o seu cadastro
+{% endblock titulo %}
+
 {% block nav %}
-<nav class="blue">
+<nav class="#263238 blue-grey darken-4">
         <div class="nav-wrapper">
-            <a href="/" class="brand-logo">Logo</a>
+            <img style = "width: 65px; height: 65px; border-radius: 200px;" src = "{{ url_for('static', filename='_imagens/logo.jpeg') }}" />
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
-                <li><a href="/mapa">Mapa</a></li>
                 <li><a href="/cadastro">Cadastro</a></li>
                 <li><a href="/login">Login</a></li>
             </ul>
@@ -22,7 +25,7 @@
         <div class="row">
             <div class="col s12 m4 offset-m4">
                 <div class="card">
-                    <div class="card-action cyan darken-1 white-text">
+                    <div class="card-action #263238 blue-grey darken-4 white-text">
                         <h3> CADASTRO </h3>
                     </div>
 
@@ -47,7 +50,7 @@
                                 placeholder="Email")}}
                         </div>
 
-                    <button type="submit" class= "btn-floating btn-large waves-effect waves-light red">Enviar</button>
+                    <button type="submit" class= "btn-floating btn-large waves-effect waves-light #263238 blue-grey darken-4">Enviar</button>
                 </form>
                 </div>
             </div>
