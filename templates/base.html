@@ -1,6 +1,10 @@
 <html>
 	<head>
-		<title> {% block titulo %}Cidade Reclama {% endblock titulo %} </title>
+		<title> 
+            {% block titulo %}
+                Cidade Reclama 
+            {% endblock titulo %}
+         </title>
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='_css/index.css') }}"> <!-- CSS -->
          <!-- Compiled and minified CSS -->
         {% block css %}
@@ -33,11 +37,10 @@
         {% block nav %}
             <nav class="transparent">
                     <div class="nav-wrapper">
-                        <a href="/" class="brand-logo">Logo</a>
+                        <img style = "width: 65px; height: 65px; border-radius: 200px;" src = "{{ url_for('static', filename='_imagens/logo.jpeg') }}" />
                         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down">
                             <li><a href="/">Home</a></li>
-                            <li><a href="/mapa">Mapa</a></li>
                             <li><a href="/cadastro">Cadastro</a></li>
                             <li><a href="/login">Login</a></li>
                         </ul>
@@ -58,5 +61,7 @@
         {% block javascript %}
         
         {% endblock javascript %}
+
+
 </body>
 </html>
