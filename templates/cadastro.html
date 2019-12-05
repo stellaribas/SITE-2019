@@ -6,63 +6,49 @@
 
 {% block nav %}
 <nav class="#263238 blue-grey darken-4">
-        <div class="nav-wrapper">
-            <img style = "width: 65px; height: 65px; border-radius: 200px;" src = "{{ url_for('static', filename='_imagens/logo.jpeg') }}" />
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="/">Home</a></li>
-                <li><a href="/cadastro">Cadastro</a></li>
-                <li><a href="/login">Login</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="nav-wrapper">
+        <img style = "width: 65px; height: 65px; border-radius: 200px;" src = "{{ url_for('static', filename='_imagens/logo.png') }}" />
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/">Home</a></li>
+            <li><a href="/cadastro">Cadastro</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </div>
+</nav>
 {% endblock nav %}
 
-   
-
 {% block conteudo %}
+    <div class="row">
+        <div class="col s12 m4 offset-m4">
+            <div class="card">
+                <div class="card-action #263238 blue-grey darken-4 white-text">
+                    <h3> CADASTRO </h3>
+                </div>
 
-        <div class="row">
-            <div class="col s12 m4 offset-m4">
-                <div class="card">
-                    <div class="card-action #263238 blue-grey darken-4 white-text">
-                        <h3> CADASTRO </h3>
+                <form action="" method="POST">
+                    {{ form.csrf_token }}
+
+                    <div class="card-content">
+                        <label>Usuario</label>
+                            {{ form.usuario (_class="form-control",
+                            placeholder="Usuário" ) }}
                     </div>
 
-                    <form action="" method="POST">
-                            {{ form.csrf_token }}
+                    <div class= "card-content">
+                        <label>Senha</label>
+                            {{ form.senha(_class="form-control",
+                            placeholder="Senha")}}
+                    </div>
 
-                        <div class="card-content">
-                            <label>Usuario</label>
-                                {{ form.usuario (_class="form-control",
-                                placeholder="Usuário" ) }}
-                        </div>
-
-                        <div class= "card-content">
-                            <label>Senha</label>
-                                {{ form.senha(_class="form-control",
-                                placeholder="Senha")}}
-                        </div>
-
-                        <div class="card-content">
-                            <label> Email </label>
-                                {{ form.email(_class="form-control",
-                                placeholder="Email")}}
-                        </div>
-
-                    <button type="submit" class= "btn-floating btn-large waves-effect waves-light #263238 blue-grey darken-4">Enviar</button>
+                    <div class="card-content">
+                        <label> Email </label>
+                            {{ form.email(_class="form-control",
+                            placeholder="Email")}}
+                    </div>
+                    <button style = "margin-left: 5%;" type="submit" class= "btn-floating btn-large waves-effect waves-light #263238 blue-grey darken-4">Enviar</button>
                 </form>
-                </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-       
-
-       
 {% endblock conteudo %}
