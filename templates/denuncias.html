@@ -5,9 +5,9 @@
 {% endblock titulo %}
 
 {% block nav %}
-<nav class="blue">
+    <nav class=" #263238 blue-grey darken-4">
         <div class="nav-wrapper">
-            <img style = "width: 65px; height: 65px; border-radius: 200px;" src = "{{ url_for('static', filename='_imagens/logo.jpeg') }}" />
+            <img style = "width: 65px; height: 65px; border-radius: 200px;" src = "{{ url_for('static', filename='_imagens/logo.png') }}" />
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
@@ -19,156 +19,102 @@
 {% endblock nav %}
 
 {% block conteudo %}
+    <div class="row">
+        <div id='mapa' class="col l9">
+            <div  id="mapDiv"></div>
+        </div>
 
-   
-<div class="row">
-  
-    <div id='mapa' class="col l9">
-           
-        <div  id="mapDiv"></div>
-        
-    </div>
-
-
-    <div class="col l3">
+        <div class="col l3">
             <div class="row">
-                    <div class="">
-                        <div class="card">
-                            <div class="card-action yellow darken-1 white-text">
-                                <h3> DENÚNCIAS </h3>
+                <div class="">
+                    <div class="card">
+                        <div class="card-action orange darken-2 white-text">
+                            <h3> DENÚNCIAS </h3>
+                        </div>
+
+                        <form action="" method="POST">
+                            {{ form.csrf_token }}
+        
+                            <div class="card-content">
+                                <label>Latitude</label>
+                                    {{ form.latitude (_class="form-control",
+                                    placeholder="Latitude" ) }}
                             </div>
         
-                            <form action="" method="POST">
-                                    {{ form.csrf_token }}
+                            <div class= "card-content">
+                                <label>Longitude</label>
+                                    {{ form.longitude(_class="form-control",
+                                    placeholder="Longitude")}}
+                            </div>
         
-                                <div class="card-content">
-                                    <label>Latitude</label>
-                                        {{ form.latitude (_class="form-control",
-                                        placeholder="Latitude" ) }}
-                                </div>
-        
-                                <div class= "card-content">
-                                    <label>Longitude</label>
-                                        {{ form.longitude(_class="form-control",
-                                        placeholder="Longitude")}}
-                                </div>
-        
-                                <div class="card-content">
-                                    <label> Mensagem </label>
-                                        {{ form.mensagem(_class="form-control",
-                                        placeholder="Mensagem")}}
-                                </div>
-        
-                            <button type="submit" class= "btn-floating btn-large waves-effect waves-light red">Enviar</button>
+                            <div class="card-content">
+                                <label> Mensagem </label>
+                                    {{ form.mensagem(_class="form-control",
+                                    placeholder="Mensagem")}}
+                            </div>
+
+                            <button style = "margin-left: 8%;" type="submit" class= "btn-floating btn-large waves-effect waves-light orange darken-2">Enviar</button>
                         </form>
-                        </div>
                     </div>
                 </div>
             </div>
-
-  
+        </div>
     </div>
-  
-  </div>
-               
 {% endblock conteudo %}
 
 {% block mapa %}
-
 {% endblock mapa %}
 
 {% block javascript %}
+    <script>
+        function onMapClick(e) {
+            var lat  = e.latlng.lat.toFixed(5);
+            var lon  = e.latlng.lng.toFixed(5);
+            var gps = "";
+            if (lat>0) gps+='N'; else gps+='S';
+            if (10>Math.abs(lat))  gps += "0";
+            gps += Math.abs(lat).toFixed(5)+" ";
+            if (lon>0) gps+='E'; else gps+='W';
+            if (10>Math.abs(lon))  gps += "0";
+            if (100>Math.abs(lon)) gps += "0";
+            gps += Math.abs(lon).toFixed(5);
+            var textArea = document.createElement("textarea");
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            textArea.style.padding = 0;
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            textArea.style.background = 'transparent';
+            textArea.value = gps;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'Successfully' : 'Unsuccessfully';
+            console.log(msg + ' copied ' + gps + ' to clipboard ');
+            } catch (err) {
+            console.log('Oops, unable to copy');
+            }
+            document.body.removeChild(textArea);
+            document.getElementById("latitude").value=lat;
+            document.getElementById("longitude").value=lon;
 
-<script>
-
-    function onMapClick(e) {
-        var lat  = e.latlng.lat.toFixed(5);
-        var lon  = e.latlng.lng.toFixed(5);
-        var gps = "";
-        if (lat>0) gps+='N'; else gps+='S';
-        if (10>Math.abs(lat))  gps += "0";
-        gps += Math.abs(lat).toFixed(5)+" ";
-        if (lon>0) gps+='E'; else gps+='W';
-        if (10>Math.abs(lon))  gps += "0";
-        if (100>Math.abs(lon)) gps += "0";
-        gps += Math.abs(lon).toFixed(5);
-        var textArea = document.createElement("textarea");
-        textArea.style.position = 'fixed';
-        textArea.style.top = 0;
-        textArea.style.left = 0;
-        textArea.style.width = '2em';
-        textArea.style.height = '2em';
-        textArea.style.padding = 0;
-        textArea.style.border = 'none';
-        textArea.style.outline = 'none';
-        textArea.style.boxShadow = 'none';
-        textArea.style.background = 'transparent';
-        textArea.value = gps;
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-          var successful = document.execCommand('copy');
-          var msg = successful ? 'Successfully' : 'Unsuccessfully';
-          console.log(msg + ' copied ' + gps + ' to clipboard ');
-        } catch (err) {
-          console.log('Oops, unable to copy');
         }
-        document.body.removeChild(textArea);
-        document.getElementById("latitude").value=lat;
-        document.getElementById("longitude").value=lon;
 
-    }
-    
-/*        
-    var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    var osm = new L.TileLayer(osmUrl, {minZoom:2, maxZoom:19});		
-    
-    /* var googleStreets = new L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{minZoom:1, maxZoom:19, subdomains:['mt0','mt1','mt2','mt3']});
-    
-    var googleSat = new L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{minZoom:1, maxZoom: 21,subdomains:['mt0','mt1','mt2','mt3']}); */
+        var map = L.map('mapDiv').setView([-14.22288, -42.77935], 13);
 
-  /*  
-    var map = new L.Map('mapDiv').setView([51.505, -0.09], 13);
-    
-    L.control.layers({"OSM (Mapnik)": osm}).addTo(map);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-    /*L.control.layers({"OSM (Mapnik)": osm, "Google Street": googleStreets, "Google Earth": googleSat}).addTo(map);*/
-    
-    /*
-    map.addLayer(osm);
-    var map_set = "osm";
-    map.fitBounds([[0,-180],[0,180]]);
-    
-    map.on('click', onMapClick); */
-
-
-    var map = L.map('mapDiv').setView([-14.22288, -42.77935], 13);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-L.marker([-14.22288, -42.77935]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
-
-
-    map.on('click', onMapClick);
+        L.marker([-14.22288, -42.77935]).addTo(map)
+            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .openPopup();
+            map.on('click', onMapClick);
     </script>
 
-
-<script>
-
-    {{denuncias}}.forEach(element => {
-        console.log(element)
-    });
-
-</script>
-    
-
-
-
 {% endblock javascript %}
-
-
-
