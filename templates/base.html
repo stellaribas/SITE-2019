@@ -4,48 +4,42 @@
             {% block titulo %}
                 Cidade Reclama 
             {% endblock titulo %}
-         </title>
+        </title>
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='_css/index.css') }}"> <!-- CSS -->
-         <!-- Compiled and minified CSS -->
-        {% block css %}
-        
-        {% endblock css %}
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-		<!-- Compiled and minified JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">		
-  
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> <!--MATERIALIZE-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> <!--JAVA SCRIPT-->
+        <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script> <!--JAVA SCRIPT-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!--ICONES DENUNCIAS-->
         <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
-        <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
-
+        <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='_imagens/logo.png')}}"> <!--ICONE DA GUIA-->
+    
         <style>
             #mapDiv {
-	position: absolute;
-	z-index:1;
-	top:12%; 
-	bottom:0; 
-	right:26%; 
-	left:1%; 
-	overflow:hidden; 
-	background-color:grey;
-	}
+            position: absolute;
+            z-index:1;
+            top:12%; 
+            bottom:0; 
+            right:26%; 
+            left:1%; 
+            overflow:hidden; 
+            background-color:grey;
+            }
         </style>
-
     </head>	
+
     <body>
-      
         {% block nav %}
             <nav class="transparent">
-                    <div class="nav-wrapper">
-                        <img style = "width: 65px; height: 65px; border-radius: 200px;" src = "{{ url_for('static', filename='_imagens/logo.jpeg') }}" />
-                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                        <ul class="right hide-on-med-and-down">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/cadastro">Cadastro</a></li>
-                            <li><a href="/login">Login</a></li>
-                        </ul>
-                    </div>
-                </nav>
+                <div class="nav-wrapper">
+                    <img style = "width: 65px; height: 65px; border-radius: 200px;" src = "{{ url_for('static', filename='_imagens/logo.png') }}" />
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/cadastro">Cadastro</a></li>
+                        <li><a href="/login">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
         {% endblock nav %}
 
         {% block body %}
@@ -56,12 +50,7 @@
 
         {% include "_Rodape.html" %}
    
-
-
         {% block javascript %}
-        
         {% endblock javascript %}
-
-
-</body>
+    </body>
 </html>
