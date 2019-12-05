@@ -5,9 +5,9 @@
 {% endblock titulo %}
 
 {% block nav %}
-<nav class="#263238 blue-grey darken-4">
+    <nav class="#263238 blue-grey darken-4">
         <div class="nav-wrapper">
-            <img style = "width: 65px; height: 65px; border-radius: 200px;" src = "{{ url_for('static', filename='_imagens/logo.jpeg') }}" />
+            <img style = "width: 65px; height: 65px; border-radius: 200px;" src = "{{ url_for('static', filename='_imagens/logo.png') }}" />
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
@@ -18,32 +18,29 @@
     </nav>
 {% endblock nav %}
 
-
-
 {% block conteudo %}
     <div class="row">
-            <div class="col s12 m4 offset-m4">
-                <div class="card">
-                    <div class="card-action #263238 blue-grey darken-4 white-text">
-                        <h3> L0GIN </h3>
-                    </div>
+        <div class="col s12 m4 offset-m4">
+            <div class="card">
+                <div class="card-action #263238 blue-grey darken-4 white-text">
+                    <h3> LOGIN </h3>
+                </div>
 
                 <form action="" method="POST">
                     {{ form.csrf_token }}
                     
-                    <div class="form-field">
+                    <div style = "padding:5%;" class="form-field">
                         <label>Usuário</label>
                         {{ form.usuario (_class="form-control", placeholder="Usuário" ) }}
                     </div>
 
-
-                    <div class= "form-field">
+                    <div style = "padding:5%;" class= "form-field">
                         <label>Senha</label>
                             {{ form.senha (_class="form-control", placeholder="Senha" ) }}
                     </div>
-                    <button type="submit" class= "btn-floating btn-large waves-effect waves-light #263238 blue-grey darken-4"> Enviar</button>
+                    <button style = "margin-left: 5%;" type="submit" class= "btn-floating btn-large waves-effect waves-light #263238 blue-grey darken-4"> Enviar</button>
                 </form>
-                </div>
             </div>
+        </div>
     </div>
 {% endblock conteudo %}

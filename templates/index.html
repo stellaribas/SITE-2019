@@ -1,64 +1,66 @@
 {%extends "base.html"%}
 
 {%block body%}
-
+	<img id = "planodefundo" src = "{{ url_for('static', filename='_imagens/cidade.jpeg') }}" />
+	<h1 style = "font-family: Candara Light; color: white; margin-top: -35%; text-align: center;"> <b> CIDADE RECLAMA </b> </h1>
+	<h5 style = "font-family: Candara Light; color: white; margin-top: -1%; text-align: center;"> <b> FAÇA AQUI A SUA DENÚNCIA E AJUDE </br> A MELHORAR A SUA CIDADE! </b> </h5>
 	
-		<img id = "planodefundo" src = "{{ url_for('static', filename='_imagens/cidade.jpeg') }}" />
+	</br> 
 		
-		 <h1 style = "font-family: Candara Light; color: white; margin-top: -35%; text-align: center;"> <b> CIDADE RECLAMA </b> </h1>
-		 <h5 style = "font-family: Candara Light; color: white; margin-top: -1%; text-align: center;"> <b> FAÇA AQUI A SUA DENÚNCIA E AJUDE </br> A MELHORAR A SUA CIDADE! </b> </h5>
-		
-		</br> 
-		<div id = "botao">
+	<div id = "botao">
 		<a href = "/denuncias" class="waves-effect waves-light btn orange darken-2"> Denuncie já!</a>
-		</div>
-		
-		<h5 style = "font-size: 33px; font-family: Candara Light; color: black; margin-top: 27%; text-align: center;"> PASSOS PARA DENUNCIAR  </h5> 
-		</br>  </br>
-		
-		<div>
-			<div class="card1">
-				<i class="large material-icons">group</i> 
-			</div>
-		</div>
-		<p style = "margin-left: 24%; margin-top: -5%; font-family: Candara Light;"> <b> Primeiro o usuário deve realizar o </br> cadastro, se ele ainda não estiver </br> cadastrado.  <b> </p> </br> </br> </br> </br> 
-		
-		<div>
-			<div class="card2">
-				<i class="large material-icons">touch_app</i> 
-			</div>
-		</div> 
-		<p style = "margin-left: 24%; margin-top: -4%; font-family: Candara Light;"> <b> Depois ele escolhe a opção </br> "DENUNCIE JÁ!"  </b> </p>
-		
-		<div>
-			<div class="card3">
-				<i class="large material-icons">warning</i>
-			</div>
-		</div> 
-		<p style = "margin-left: 77%; margin-top: -3%; font-family: Candara Light;"> <b> Pronto. Pode realizar sua denúncia. </b> </p>
-		
-		<div>
-			<div class="card4">
-				<i class="large material-icons">location_on</i> 
-			</div>
-		</div>
-		<p style = "margin-left: 77%; margin-top: -3%; font-family: Candara Light;"> Pronto. Pode realizar sua denúncia. </p>
-	</br> </br>
-
-	<div style = "background-color: beige;"> </br>
-		<h1 style = "height: 75%; font-size: 30px; font-family: Candara Light;  text-align: center;"> SOBRE NÓS </br> </br>
-			<p style = "text-align: left; font-size: 20px;"> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> 
-				Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br>
-				Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> </p> 
-			<img style = "width: 15%; margin-top: -13%; margin-left: -12%; border-radius: 50%;" src = "{{ url_for('static', filename='_imagens/stella.jpg') }}" /> 
-		
-
-
-			<p style = "text-align: right; font-size: 20px; margin-left: 50%;"> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> 
-				Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br>
-				Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> Meu nome é StellaMeu nome é StellaMeu nome é Stella </br> </p> 
-			<img style = "width: 15%; margin-top: -13%; margin-left: 12%; border-radius: 50%;" src = "{{ url_for('static', filename='_imagens/eva.jpg') }}" /> 
-		</h1>
 	</div>
+		
+	<h5 style = "font-size: 33px; font-family: Candara Light; color: black; margin-top: 27%; text-align: center;"> PASSOS PARA DENUNCIAR  </h5> 
+		
+	</br></br></br>
 
+	<div>
+		<div style = "width: 100px; height: 100px; border-radius: 200px; background-color: #FFFF00;" class="card1">
+			<i class="large material-icons">group</i> 
+		</div>
+	</div>
+	<p style = "margin-left: 22%; margin-top: -7%; font-family: Candara Light;"> <b> Primeiro o usuário deve realizar o </br> cadastro, se ele ainda não estiver </br> cadastrado.  <b> </p> </br> </br> </br> </br> 
+
+	<div>
+		<div style = "width: 100px; height: 100px; border-radius: 200px; background-color: #FFFF00;" class="card2">
+			<i class="large material-icons">touch_app</i> 
+		</div>
+	</div> 
+	<p style = "margin-left: 22%; margin-top: -7%; font-family: Candara Light;"> <b> Depois ele escolhe a opção </br> "DENUNCIE JÁ!"  </b> </p>
+		
+	<div>
+		<div style = "width: 100px; height: 100px; border-radius: 200px; background-color: #FFFF00;" class="card3">
+			<i class="large material-icons">location_on</i>
+		</div>
+	</div> 
+	<p style = "margin-left: 75%; margin-top: -7%; font-family: Candara Light;"> <b> No mapa, marque o local que deseja realizar a denuncia. </b> </p>
+		
+	<div>
+		<div style = "width: 100px; height: 100px; border-radius: 200px; background-color: #FFFF00;" class="card4">
+			<i class="large material-icons">warning</i> 
+		</div>
+	</div>
+	<p style = "margin-left: 75%; margin-top: -7%; font-family: Candara Light;"> No formulário ao lado, escreva sua mensagem, clique em enviar e pronto. </p>
+	
+	</br></br></br></br></br> 
+
+	<div style = "background-color: beige;"> </br> </br>
+		<h1 style = "height: 75%; font-size: 30px; font-family: Candara Light;  text-align: center;"> DESENVOLVEDORAS DO SITE </h1>	
+		
+		<table style = "margin-top: -45%;">
+			<tr>
+				<td><img style = "width: 120px; height: 120px; border-radius: 200px; margin-left: 70%; margin-top: -5%; " src = "{{ url_for('static', filename='_imagens/stella.jpeg') }}" /> </td>
+				<td><p style = "font-size: 15px; text-align: justify; padding: 15%;"> Me chamo Stella Ribas, tenho 17 anos, estudo no Instituto Federal de Educação, Ciência e Tecnologia Baiano, Campus Guanambi. Sou ingressada no segundo ano do ensino médio e curso o técnico Informática p/ Internet. Foi uma honra desenvolver este site. Espero que ele seja bastante útil e atinja o seu objetivo, facilidade ao reclamar de algum lugar com condições inadequadas na sua cidade. Foi complexo o desenvolvimento do mesmo, usamos diferentes linguagens de programação, porém tivemos êxito no final do projeto.</p></td>
+			</tr>
+		</table>
+
+		<table style = "margin-top: -11%;">
+			<tr>
+				<td><p style = "font-size: 15px; text-align: justify; padding: 15%;"> Me chamo Eva Milena, tenho 16 anos, estudo no
+					Instituto Federal de Educação, Ciência e Tecnologia Baiano, Campus Guanambi. Sou ingressada no segundo ano do ensino médio, no curso Informática p/ Internet. Ao decorrer do desenvolvimento do sistema, passamos por vários perrengues, mas nosso objetivo de ajudar a sociedade com uma plataforma eficiente não nos limitou. Espero ajudá-los da melhor forma com o nosso projeto. </p></td>		
+				<td><img style = "width: 120px; height: 120px; border-radius: 200px; margin-left: -70%;" src = "{{ url_for('static', filename='_imagens/eva.jpeg') }}" /> </td>
+			</tr>
+		</table>
+	</div> 
 {% endblock body %}
